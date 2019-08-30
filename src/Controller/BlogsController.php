@@ -98,6 +98,8 @@ class BlogsController extends AbstractController
      */
     public function showAuthor(Users $user, BlogsRepository $blogsRepository)
     {   
+        dump($blogsRepository->findByAuthor($user));
+        
         return $this->render('blogs/showAuthor.html.twig', [
             'blogs' => $blogsRepository->findByAuthor($user),
         ]);
